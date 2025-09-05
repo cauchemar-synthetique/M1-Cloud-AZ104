@@ -128,5 +128,3 @@ ssh-add -l
 🧠 *Note : une fois la clé ajoutée, elle est disponible pour toutes les connexions SSH durant la session.*
 
 ---
-
-✅ **Fin de la Partie 2 : environnement local prêt pour Terraform + Azure avec clé SSH sécurisée !**
