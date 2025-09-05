@@ -3,21 +3,21 @@
 
 ---
 
-## 🧩 Partie 1 – Création de VM via Azure CLI
+##  Partie 1 – Création de VM via Azure CLI
 
-### ✅ Création du groupe de ressources
+###  Création du groupe de ressources
 
 ```bash
 az group create --location uksouth --name akatsuki
 ```
 
-### ✅ Création de la VM `vm-cauchemar`
+###  Création de la VM `vm-cauchemar`
 
 ```bash
 az vm create   --resource-group akatsuki   --name vm-cauchemar   --image Ubuntu2204   --admin-username cauchemar34   --ssh-key-values ~/.ssh/id_ed25519.pub
 ```
 
-### ✅ Connexion SSH (agent SSH activé, pas de mot de passe demandé)
+###  Connexion SSH (agent SSH activé, pas de mot de passe demandé)
 
 ```bash
 ssh cauchemar34@<IP_PUBLIQUE_DONNÉE>
@@ -25,9 +25,9 @@ ssh cauchemar34@<IP_PUBLIQUE_DONNÉE>
 
 ---
 
-## 🧩 Partie 2 – Création de VM avec Terraform
+##  Partie 2 – Création de VM avec Terraform
 
-### ✅ Arborescence
+###  Arborescence
 
 ```bash
 C:\Users\33749\Documents\TP_AZURE_TERRAFORM
@@ -36,13 +36,13 @@ C:\Users\33749\Documents\TP_AZURE_TERRAFORM
 └── .terraform.lock.hcl
 ```
 
-### ✅ Contenu du `main.tf`
+###  Contenu du `main.tf`
 
 Voir fichier rendu séparément
 
 ---
 
-## ✅ Commandes Terraform exécutées
+##  Commandes Terraform exécutées
 
 ### Initialisation
 
@@ -108,7 +108,7 @@ ssh cauchemar34@172.167.170.33
 
 ---
 
-## ✅ Vérifications des services sur la VM
+##  Vérifications des services sur la VM
 
 ```bash
 systemctl status walinuxagent.service
@@ -116,7 +116,7 @@ systemctl status cloud-init.service
 cloud-init status
 ```
 
-Tous les services sont présents et actifs ✅
+Tous les services sont présents et actifs 
 
 ---
 
