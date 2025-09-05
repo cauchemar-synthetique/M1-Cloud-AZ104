@@ -1,7 +1,4 @@
-# 📘 TP Azure – VM avec CLI et Terraform
-
-**Étudiant** : Fils Tite Edgard Boungoueres  
-**Date** : 05/09/2025  
+# 📘 TP Azure – VM avec CLI et Terraform 
 **TP** : Création d’une VM Azure via CLI (`az`) puis Terraform
 
 ---
