@@ -5,34 +5,34 @@
 
 ➜ **Activez votre compte Azure for Students**
 
-✔️ Activation réalisée via le site officiel : [https://azure.microsoft.com/fr-fr/free/students/](https://azure.microsoft.com/fr-fr/free/students/)  
-✔️ Connexion avec compte EFREI réussie
+ Activation réalisée via le site officiel : [https://azure.microsoft.com/fr-fr/free/students/](https://azure.microsoft.com/fr-fr/free/students/)  
+ Connexion avec compte EFREI réussie
 
 ➜ **Installer le Azure CLI az sur votre poste**
 
-✔️ Installation via `winget` :
+ Installation via `winget` :
 ```powershell
 winget install --id Microsoft.AzureCLI -e
 ```
 
-✔️ Connexion :
+ Connexion :
 ```powershell
 az login
 ```
 
-✔️ Vérification de l’abonnement :
+ Vérification de l’abonnement :
 ```powershell
 az account show --output table
 ```
 
-✔️ Résultat :
+ Résultat :
 ```
 Azure for Students  | Enabled | efrei.net | Efrei
 ```
 
 ➜ **Installer Terraform sur votre poste**
 
-✔️ Installation manuelle via PowerShell :
+ Installation manuelle via PowerShell :
 
 ```powershell
 New-Item -Path "C:\Tools\Terraform" -ItemType Directory -Force
@@ -42,7 +42,7 @@ Expand-Archive -Path "C:\Tools\Terraform\terraform.zip" -DestinationPath "C:\Too
 Remove-Item "C:\Tools\Terraform\terraform.zip"
 ```
 
-✔️ Ajout au PATH :
+ Ajout au PATH :
 ```powershell
 $terraformPath = "C:\Tools\Terraform"
 $currentPath = [Environment]::GetEnvironmentVariable("Path", "User")
@@ -54,13 +54,13 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","User") + ";" +
 terraform -version
 ```
 
-✔️ Résultat :
+ Résultat :
 ```
 Terraform v1.8.5
 on windows_amd64
 ```
 
-> 💬 *Note pour les Windowsiens : installation réalisée en PowerShell natif.*
+>  *Note pour les Windowsiens : installation réalisée en PowerShell natif.*
 
 ---
 
@@ -70,61 +70,61 @@ on windows_amd64
 
 **Vous n’utiliserez PAS RSA.**
 
-❌ *Pourquoi éviter RSA ?*  
-👉 RSA devient moins recommandé pour les connexions SSH à cause de sa lenteur et de la taille croissante des clés requises pour garantir un bon niveau de sécurité.  
-📚 Source : [ANSSI - Recommandations cryptographiques 2022](https://www.ssi.gouv.fr/administration/bonnes-pratiques/recommandations-cryptographiques/)
+ *Pourquoi éviter RSA ?*  
+ RSA devient moins recommandé pour les connexions SSH à cause de sa lenteur et de la taille croissante des clés requises pour garantir un bon niveau de sécurité.  
+ Source : [ANSSI - Recommandations cryptographiques 2022](https://www.ssi.gouv.fr/administration/bonnes-pratiques/recommandations-cryptographiques/)
 
-✅ *Quel algorithme utiliser ?*  
-👉 Recommandation : **ED25519** – moderne, rapide, sécurisé, et supporté par OpenSSH.  
-📚 Source : [OpenSSH - ssh-keygen man page](https://man.openbsd.org/ssh-keygen#t)
+ *Quel algorithme utiliser ?*  
+ Recommandation : **ED25519** – moderne, rapide, sécurisé, et supporté par OpenSSH.  
+ Source : [OpenSSH - ssh-keygen man page](https://man.openbsd.org/ssh-keygen#t)
 
 ### 🌞 B. Génération de votre paire de clés
 
-✔️ Commande utilisée :
+ Commande utilisée :
 ```powershell
 ssh-keygen -t ed25519 -f "$env:USERPROFILE\.ssh\cloud_tp1" -C "edgard@efrei.net"
 ```
 
-✔️ Fichiers générés :
+ Fichiers générés :
 ```
 C:\Users\33749\.ssh\cloud_tp1       (clé privée protégée par mot de passe)
 C:\Users\33749\.ssh\cloud_tp1.pub   (clé publique)
 ```
 
-✔️ Vérification :
+ Vérification :
 ```powershell
 Get-ChildItem "$env:USERPROFILE\.ssh\cloud_tp1*"
 ```
 
 ### 🌞 C. Agent SSH – configuration
 
-✔️ Activation de l’agent SSH (en administrateur) :
+ Activation de l’agent SSH (en administrateur) :
 ```powershell
 Start-Service ssh-agent
 Set-Service -Name ssh-agent -StartupType Automatic
 ```
 
-✔️ Ajout de la clé dans l’agent (en session utilisateur) :
+ Ajout de la clé dans l’agent (en session utilisateur) :
 ```powershell
 ssh-add "$env:USERPROFILE\.ssh\cloud_tp1"
 ```
 
-✔️ Sortie :
+ Sortie :
 ```
 Enter passphrase...
 Identity added: C:\Users\33749\.ssh\cloud_tp1 (edgard@efrei.net)
 ```
 
-✔️ Vérification de la clé chargée :
+ Vérification de la clé chargée :
 ```powershell
 ssh-add -l
 ```
 
-✔️ Sortie attendue :
+Sortie attendue :
 ```
 256 SHA256:xxxxxxxxxxxxxxxxxxxxxxxx edgard@efrei.net (ED25519)
 ```
 
-🧠 *Note : une fois la clé ajoutée, elle est disponible pour toutes les connexions SSH durant la session.*
+*Note : une fois la clé ajoutée, elle est disponible pour toutes les connexions SSH durant la session.*
 
 ---
