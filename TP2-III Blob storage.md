@@ -75,7 +75,7 @@ public_ip_address = "172.167.170.33"
 
 ---
 
-## 3. 📸 Proooooofs depuis la VM
+## 3. Proooooofs depuis la VM
 
 ###  Installation de AzCopy
 
@@ -139,7 +139,7 @@ curl -H "Metadata:true" "http://169.254.169.254/metadata/identity/oauth2/token?a
   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOi...",
   "expires_on": "1694899109",
   "resource": "https://storage.azure.com/",
-  ...
+  
 }
 ```
 
