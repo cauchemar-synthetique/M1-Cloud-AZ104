@@ -4,7 +4,7 @@ Azure permet de créer un **Storage Account** contenant des **containers Blob** 
 
 ---
 
-## 2. 🛠️ Let's Go : Déploiement via Terraform
+## 2.  Let's Go : Déploiement via Terraform
 
 ###  Fichiers utilisés
 
