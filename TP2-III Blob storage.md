@@ -151,10 +151,10 @@ Cette adresse IP est une **adresse spéciale de lien local (link-local)** access
 
 ---
 
-📝 **Fichiers finaux :**
+ **Fichiers finaux :**
 
 ```
-📁 TP_AZURE_TERRAFORM/
+ TP_AZURE_TERRAFORM/
 ├── main.tf
 ├── network.tf
 ├── outputs.tf
