@@ -1,5 +1,3 @@
----
-
 ### 🌞 1. Donner un nom DNS à votre VM
 
 **Objectif** : Ajouter un nom DNS à la VM via Terraform.
